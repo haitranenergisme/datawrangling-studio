@@ -58,21 +58,21 @@ affinity: {}
 ingress:
   enabled: true
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    external-dns.alpha.kubernetes.io/hostname: data-wrangling.energisme.net
+    cert-manager.io/cluster-issuer: letsencrypt
+    external-dns.alpha.kubernetes.io/hostname: data-wrangling.lab.loamics.net
     kubernetes.io/ingress.class : nginx
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     kubernetes.io/tls-acme: "true"
     #nginx.ingress.kubernetes.io/rewrite-target: /studio$2
   hosts:
-    - host: "data-wrangling.energisme.net"
+    - host: "data-wrangling.lab.loamics.net"
       paths:
       - path: /shiny
         pathType: Prefix
         backend:
-          serviceName: studiodw-dev
+          serviceName: studiodw-dev2
           servicePort: 3838
   tls:
     - hosts:
-        - data-wrangling.energisme.net
-      secretName: data-wrangling.energisme.net-tls
+        - data-wrangling.lab.loamics.net
+      secretName: argocd-secret
