@@ -9,7 +9,7 @@ image:
   tag: latest
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "studiodw-dev"
+fullnameOverride: "studiodw-dev2"
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
